@@ -1,0 +1,21 @@
+# Secrets: real keys live only in .env on your machine.
+.env
+
+# Local data: the SQLite database and the downloaded GTFS files.
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS
+.DS_Store
+
+# Local editor/agent config (contains machine-specific paths)
+.claude/

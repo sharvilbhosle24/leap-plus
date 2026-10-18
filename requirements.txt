@@ -1,0 +1,9 @@
+# Pinned to the versions tested on Python 3.14.
+fastapi==0.143.0
+uvicorn==0.54.0
+python-dotenv==1.2.4
+httpx==0.28.1
+stripe==16.0.0
+gtfs-realtime-bindings==3.0.0
+protobuf==7.36.2
+pytest==9.1.1

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>Leap+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <span class="wordmark">Leap<span class="accent">+</span></span>
+    <span class="user-chip" id="user-chip" aria-live="polite"></span>
+  </header>
+
+  <!-- Hard rule: this disclaimer is visible on every screen, always. -->
+  <p class="disclaimer" role="note">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+    Simulated Leap ledger — no NTA integration
+  </p>
+
+  <main>
+    <section id="view-home" class="view" aria-labelledby="home-title">
+      <h1 id="home-title" class="view-title">Home</h1>
+      <div data-balance></div>
+      <div data-home-ask></div>
+      <h2 class="section-title">Favourite stops</h2>
+      <div data-favourites></div>
+    </section>
+
+    <section id="view-live" class="view" aria-labelledby="live-title" hidden>
+      <h1 id="live-title" class="view-title">Live</h1>
+      <div data-feature="live" data-label="The live bus map"></div>
+      <div data-station-detail></div>
+      <h2 class="section-title">Find a stop</h2>
+      <div data-stations></div>
+    </section>
+
+    <section id="view-card" class="view" aria-labelledby="card-title" hidden>
+      <h1 id="card-title" class="view-title">Card</h1>
+      <div data-checkout-status aria-live="polite"></div>
+      <div data-balance></div>
+      <div data-feature="topup" data-label="Top-up"></div>
+      <h2 class="section-title">History</h2>
+      <div data-transactions></div>
+    </section>
+
+    <section id="view-ask" class="view" aria-labelledby="ask-title" hidden>
+      <h1 id="ask-title" class="view-title">Ask Leap</h1>
+      <div data-feature="ask" data-label="Ask Leap"></div>
+    </section>
+  </main>
+
+  <nav class="tabbar" aria-label="Main">
+    <a href="#home" data-tab="home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="#live" data-tab="live">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <span>Live</span>
+    </a>
+    <a href="#card" data-tab="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg>
+      <span>Card</span>
+    </a>
+    <a href="#ask" data-tab="ask">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>
+      <span>Ask</span>
+    </a>
+  </nav>
+</body>
+</html>
